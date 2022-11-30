@@ -34,5 +34,30 @@ def solution(a):
         if sum([diff(*x) for x in zip(z, z[1:])]) == len(a) - 1:
             return True
     return False
+
+
+# Define a word as a sequence of consecutive English letters. Find the longest word from the given string.
+    return max(re.split('[^a-zA-Z]', text), key=len)
+
+# Help Ratiorg by writing a function that returns the sum of numbers that appear in the given inputString.
+
+def solution(s):
+    Sum = 0
+    integer = "0"
+    for c in s:
+        if c.isdigit():
+            integer += c
+        else:
+            Sum += int(integer)
+            integer = "0"
+    Sum += int(integer)
+    return Sum
+    
+    l = re.findall(r"\d+",inputString)
+    return sum([int(i) for i in l])
+    
+    return sum(map(int,"".join([i if i.isdigit() else " " for i in s]).split()))
+    # map() function returns a map object(which is an iterator) of the results 
+    # after applying the given function to each item of a given iterable (list, tuple etc.)
                     
 
