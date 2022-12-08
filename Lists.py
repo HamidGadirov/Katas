@@ -28,3 +28,17 @@ def solution(a, b):
 
 def solution(n):
     return [[0] * min(i + 1, 2 * n - (i + 1)) for i in range(n * 2 - 1)]
+
+def solution(ch, assignments):
+    return [ch * assignments[i] for i in range(len(assignments))]
+    # return [ch * d for d in data]
+    # return list(map(lambda i: i * ch, data))
+
+# Least Common Denominator
+from math import gcd
+
+def solution(denominators):
+    return functools.reduce(lambda a, b: a * b // gcd(a, b) if a % b != 0 else a, denominators)
+
+print("The maximum element of the list is : ", end="")
+print(functools.reduce(lambda a, b: a if a > b else b, lis))
