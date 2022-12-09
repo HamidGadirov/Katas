@@ -42,3 +42,9 @@ def solution(denominators):
 
 print("The maximum element of the list is : ", end="")
 print(functools.reduce(lambda a, b: a if a > b else b, lis))
+
+# Transpose Dictionary
+def solution(scriptByExtension):
+    return sorted([(v, k) for k, v in scriptByExtension.items()])
+    # return sorted(zip(scriptByExtension.values(), scriptByExtension.keys()))
+    # return sorted([[value, key] for key, value in scriptByExtension.items()])

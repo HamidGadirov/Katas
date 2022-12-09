@@ -13,3 +13,15 @@ def solution(bestStudents, scholarships, allStudents):
     # return set(bestStudents) <= set(scholarships) < set(allStudents)
 
 # difference is same as '-'
+
+'''
+You want to use only popular characters in the name of your company, but not too mainstream. 
+You consider a character to be popular if it appears in at least two company names, and consider it to be mainstream if it appears in all three.
+'''
+def solution(companies):
+    cmp1 = set(companies[0])
+    cmp2 = set(companies[1])
+    cmp3 = set(companies[2])
+    res = (cmp1 & cmp2 | cmp1 & cmp3 | cmp2 & cmp3) - (cmp1 & cmp2 & cmp3)
+    # res = ((cmp1 | cmp2 | cmp3) - (cmp1 ^ cmp2 ^ cmp3))
+    return list(sorted(list(res)))
