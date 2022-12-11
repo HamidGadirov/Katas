@@ -48,3 +48,12 @@ def solution(scriptByExtension):
     return sorted([(v, k) for k, v in scriptByExtension.items()])
     # return sorted(zip(scriptByExtension.values(), scriptByExtension.keys()))
     # return sorted([[value, key] for key, value in scriptByExtension.items()])
+
+
+# Given a list of digits as they are written in the clockwise order, find all other combinations the password could possibly have.
+from collections import deque
+def solution(digits):
+    n = len(digits)
+    res = [deque(digits) for _ in range(n)]
+    deque(map(lambda i: res[i].rotate(-i), range(n)), 0)
+    return [list(d) for d in res]
